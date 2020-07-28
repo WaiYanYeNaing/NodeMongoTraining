@@ -14,7 +14,7 @@ app.use("/posts", postsRoute);
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("Node JS rest api is now available");
 });
 
 // Connect to DB
