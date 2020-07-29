@@ -8,14 +8,16 @@ require("dotenv/config");
 app.use(bodyParser.json());
 
 // Import Routes
+const authRoute = require("./routes/auth");
 const postsRoute = require("./routes/post");
 
-app.use("/posts", postsRoute);
+app.use("/api/user", authRoute);
+app.use("/api/posts", postsRoute);
 
 // ROUTES
-app.get("/", (req, res) => {
-  res.send("Node JS rest api is now available");
-});
+// app.get("/", (req, res) => {
+//   res.send("Node JS rest api is now available");
+// });
 
 // Connect to DB
 mongoose.connect(
